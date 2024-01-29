@@ -1,5 +1,5 @@
 node {
   stage('Clone repo'){
-    git 'https://github.com/LucMartin91/Devops.git'
+    git branch: 'main', url: 'https://github.com/LucMartin91/Devops.git'
   }
 }
