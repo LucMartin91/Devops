@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Génère la Javadoc
-                    sh 'mvn javadoc:javadoc'
+                    sh 'demo/demo/mvn javadoc:javadoc'
                     
                     // Archive la Javadoc en tant qu'artefact
                     archiveArtifacts artifacts: 'target/site/apidocs/**/*', fingerprint: true
