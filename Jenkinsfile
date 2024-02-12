@@ -3,7 +3,7 @@ pipeline {
     
     tools {
         // Assurez-vous que "Maven_3_5_2" correspond au nom que vous avez donné à l'installation de Maven dans la configuration globale de Jenkins
-        maven 'Maven_3_5_2'
+        maven "Maven_3_5_2"
     }
     
     triggers {
