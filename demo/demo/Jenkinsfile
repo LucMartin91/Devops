@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Compile le projet sans exécuter les tests
-                    sh 'demo/demo/mvn clean compile -DskipTests'
+                    sh 'mvn clean compile -DskipTests'
                 }
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     // Génère la Javadoc
-                    sh 'demo/demo/mvn javadoc:javadoc'
+                    sh 'mvn javadoc:javadoc'
                     
                     // Archive la Javadoc en tant qu'artefact
                     archiveArtifacts artifacts: 'target/site/apidocs/**/*', fingerprint: true
