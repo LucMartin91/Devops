@@ -12,9 +12,12 @@ pipeline{
             }
         }
         
-        stage('Build'){
-            steps{
-                sh 'mvn compile'
+       stage('Compilation') {
+            steps {
+                script {
+                    // Compile le projet sans exécuter les tests
+                    sh 'mvn -f demo/demo/pom.xml clean compile -DskipTests'
+                }
             }
         }
         
