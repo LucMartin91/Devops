@@ -39,8 +39,8 @@ pipeline{
         }
         
          stage('Tests') {
-        steps {
-            script {
+            steps {
+                script {
                 // Exécuter les tests avec Maven
                 sh 'mvn -f demo/demo/pom.xml clean test'
             }
