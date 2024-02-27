@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class DemoApplicationTests {
+
     // Définition directe de la classe Calculator
     static class Calculator {
         public static int add(int a, int b) {
@@ -24,22 +25,27 @@ class DemoApplicationTests {
             }
         }
     }
+
     @Test
     void contextLoads() {
+        // Test de la méthode contextLoads
     }
 
     @Test
     void testAdd() {
+        // Appeler directement la méthode add de la classe Calculator définie ici
         assertEquals(5, Calculator.add(2, 3));
     }
 
     @Test
     void testMulti() {
+        // Appeler directement la méthode multi de la classe Calculator définie ici
         assertEquals(6, Calculator.multi(2, 3));
     }
 
     @Test
     void testDiv() {
+        // Appeler directement la méthode div de la classe Calculator définie ici
         assertEquals(2, Calculator.div(6, 3));
     }
 }
