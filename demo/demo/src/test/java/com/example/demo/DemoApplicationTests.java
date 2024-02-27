@@ -6,7 +6,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class DemoApplicationTests {
+    // Définition directe de la classe Calculator
+    static class Calculator {
+        public static int add(int a, int b) {
+            return a + b;
+        }
 
+        public static int multi(int a, int b) {
+            return a * b;
+        }
+
+        public static int div(int a, int b) {
+            if (b != 0) {
+                return a / b;
+            } else {
+                throw new ArithmeticException("Division by zero");
+            }
+        }
+    }
     @Test
     void contextLoads() {
     }
