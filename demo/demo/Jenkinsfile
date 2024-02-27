@@ -22,7 +22,7 @@ pipeline{
         stage('SonarQube Scan') {
             steps {
                 script {
-                    withSonarQubeEnv('Your_SonarQube_Server_Name') {
+                    withSonarQubeEnv('Sonarqube') {
                     sh 'mvn sonar:sonar'
                     }
                 }
