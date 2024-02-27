@@ -22,7 +22,7 @@ pipeline{
         stage('SonarQube Scan') {
             steps {
                 script {
-                    withSonarQubeEnv('Sonarqube') {
+                    withSonarQubeEnv('devops-sonarqube-1') {
                     // Spécifiez explicitement le répertoire du projet
                         dir('demo/demo') {
                             sh 'mvn sonar:sonar'
