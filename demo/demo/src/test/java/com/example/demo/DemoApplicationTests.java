@@ -35,7 +35,7 @@ class DemoApplicationTests {
     public void testAdd() {
         assertEquals(6, Calculator.add(2, 3));
     }
-
+    
     @Test
     void testMulti() {
         // Appeler directement la méthode multi de la classe Calculator définie ici
