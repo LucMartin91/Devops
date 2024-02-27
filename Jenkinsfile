@@ -37,10 +37,5 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            // Archiver les artefacts même en cas d'échec
-            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-        }
     }
 }
