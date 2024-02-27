@@ -32,9 +32,8 @@ class DemoApplicationTests {
     }
 
     @Test
-    void testAdd() {
-        // Appeler directement la méthode add de la classe Calculator définie ici
-        assertEquals(5, Calculator.add(2, 3));
+    public void testAdd() {
+        assertEquals(6, Calculator.add(2, 3));
     }
 
     @Test
