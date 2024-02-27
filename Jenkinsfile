@@ -37,7 +37,7 @@ pipeline {
                     sh 'demo/demo/mvn javadoc:javadoc'
                     
                     // Archive la Javadoc en tant qu'artefact
-                    archiveArtifacts artifacts: 'target/site/apidocs/**/*', fingerprint: true
+                    archiveArtifacts artifacts: '**/*', fingerprint: true
                 }
             }
         }
