@@ -18,6 +18,16 @@ pipeline{
                 
             }
         }
+
+        stage('SonarQube Scan') {
+            steps {
+                script {
+                    withSonarQubeEnv('Your_SonarQube_Server_Name') {
+                    sh 'mvn sonar:sonar'
+                    }
+                }
+            }
+        }
         
        stage('Compilation') {
            // Deuxième étape : Compilation du projet
