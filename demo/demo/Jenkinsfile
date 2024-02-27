@@ -1,18 +1,26 @@
 pipeline{
     agent any
+    // Utilise n'importe quel agent disponible pour l'exécution du pipeline
     tools {maven 'Maven-3.5.2'}
+     // Utilise Maven version 3.5.2 comme l'outil de build
     triggers {         
-        pollSCM('H/3 * * * *')     
+        pollSCM('H/3 * * * *')   
+        // Déclenche le pipeline toutes les 3 minutes (expression cron)
     }
     
     stages {
+         // Définition des étapes du pipeline
+
         stage('Checkout'){
+            // Première étape : Checkout du code depuis le repository Git
             steps{
                 git branch: 'dev', url :'https://github.com/LucMartin91/Devops'
+                
             }
         }
         
        stage('Compilation') {
+           // Deuxième étape : Compilation du projet
             steps {
                 script {
                     // Compile le projet sans exécuter les tests
@@ -22,6 +30,7 @@ pipeline{
         }
         
         stage('Javadoc'){
+             // Troisième étape : Génération de la documentation Javadoc
             steps{
                 script {
                 sh 'mvn -f demo/demo/pom.xml javadoc:javadoc'
