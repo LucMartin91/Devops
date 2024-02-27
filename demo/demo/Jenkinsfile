@@ -23,7 +23,9 @@ pipeline{
         
         stage('Javadoc'){
             steps{
-                sh 'demo/demo/mvn javadoc:javadoc'
+                script {
+                sh 'mvn -f demo/demo/pom.xml javadoc:javadoc'
+                }
             }
         }
         
