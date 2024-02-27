@@ -23,7 +23,7 @@ pipeline{
         
         stage('Javadoc'){
             steps{
-                sh 'demo/demo/mvnw javadoc:javadoc'
+                sh 'demo/demo/mvn javadoc:javadoc'
             }
         }
         
