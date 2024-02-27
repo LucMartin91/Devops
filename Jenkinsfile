@@ -7,12 +7,9 @@ pipeline {
     }
     
     triggers {
-        pollSCM('H/3 * * * *') // Vérifier les changements du SCM toutes les 3 minutes
+        cron('H/3 * * * *') // Vérifier les changements du SCM toutes les 3 minutes
     }
     
-    options {
-        skipStagesAfterUnstable() // Pour ne pas continuer après un échec de compilation
-    }
 
     stages {
         stage('Récupération du code source') {
