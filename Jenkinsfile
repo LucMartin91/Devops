@@ -35,9 +35,6 @@ pipeline {
                 script {
                     // Génère la Javadoc
                     sh 'demo/demo/mvn javadoc:javadoc'
-                    
-                    // Archive la Javadoc en tant qu'artefact
-                    archiveArtifacts artifacts: '**/*', fingerprint: true
                 }
             }
         }
