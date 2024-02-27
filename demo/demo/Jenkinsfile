@@ -38,5 +38,21 @@ pipeline{
             }
         }
         
+         stage('Tests') {
+        steps {
+            script {
+                // Exécuter les tests avec Maven
+                sh 'mvn -f demo/demo/pom.xml clean test'
+            }
+        }
+    }
+
+    stage('Publish Test Report') {
+        steps {
+            script {
+                // Publier le rapport de tests avec le plugin JUnit de Jenkins
+                step([$class: 'JUnitResultArchiver', testResults: 'demo/demo/target/surefire-reports/TEST-*.xml'])
+            }
+        }
     }
 }
