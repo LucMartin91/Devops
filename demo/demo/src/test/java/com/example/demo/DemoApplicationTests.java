@@ -32,7 +32,7 @@ class DemoApplicationTests {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void testAdd() {
         assertEquals(6, Calculator.add(2, 3));
     }
